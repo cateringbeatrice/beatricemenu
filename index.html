@@ -89,7 +89,7 @@
   .station-list { list-style:none; font-family:'Josefin Sans',sans-serif; font-weight:300; font-size:14px; color:#2A1F14; line-height:1.95; letter-spacing:0.03em; }
   .station-list li { position:relative; padding-left:22px; }
   .station-list li::before { content:'—'; position:absolute; left:0; color:var(--bronze-pale); font-style:normal; }
-  .station-note { font-size:13px; font-weight:300; letter-spacing:0.04em; color:var(--bronze); margin-top:16px; line-height:1.7; }
+  .station-note { font-size:12px; font-weight:400; letter-spacing:0.02em; color:#000000; margin-top:16px; line-height:1.7; }
 
   /* ── PROTO GRID ── */
   .proto-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:24px; }
@@ -120,11 +120,11 @@
   .course-body { font-family:'Josefin Sans',sans-serif; font-weight:300; font-size:14px; color:#2A1F14; line-height:1.8; letter-spacing:0.04em; }
   .course-or { font-size:10px; font-weight:300; letter-spacing:0.32em; text-transform:uppercase; color:var(--muted); display:block; margin:8px 0; font-style:normal; }
   .course-fish { font-family:'Josefin Sans',sans-serif; font-weight:300; font-size:14px; color:#2A1F14; display:block; letter-spacing:0.04em; }
-  .course-note { font-family:'Josefin Sans',sans-serif; font-size:13px; font-weight:400; letter-spacing:0.04em; color:#4A3520; font-style:normal; padding:0 36px 22px; line-height:1.7; }
+  .course-note { font-family:'Josefin Sans',sans-serif; font-size:12px; font-weight:400; letter-spacing:0.02em; color:#000000; font-style:normal; padding:0 36px 22px; line-height:1.7; }
 
   /* ── NOTE / FOOTER ── */
   .menu-note { font-family:'Josefin Sans',sans-serif; font-weight:300; font-size:13px; color:var(--muted); text-align:center; padding:16px 0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); margin:36px 0; line-height:1.7; letter-spacing:0.08em; }
-  .asterisk-note { font-size:10px; font-weight:300; letter-spacing:0.04em; color:var(--muted); text-align:center; margin-top:16px; line-height:1.8; }
+  .asterisk-note { font-size:12px; font-weight:400; letter-spacing:0.02em; color:#000000; text-align:center; margin-top:16px; line-height:1.8; }
 
   footer { background:var(--off-white); border-top:1px solid var(--rule); text-align:center; padding:52px 24px; }
   footer img { width:200px; margin-bottom:20px; display:block; margin-left:auto; margin-right:auto; }
@@ -218,7 +218,9 @@
       <div class="event-row"><span class="event-row-lbl">Midnight snacks</span><span class="event-row-val">2–3 options</span></div>
     </div>
   </div>
-  <p class="asterisk-note">Suggested formats only. Final selections determine labor fees. Contact us to design a custom experience.</p>
+  <p class="asterisk-note">Suggested formats only.<br>
+Final selections determine labor fees.<br>
+Contact us to design a custom experience.</p>
 </div>
 
 <!-- ═══ CANAPÉS ═══ -->
@@ -396,6 +398,17 @@
         <li>Carpaccio di manzo, truffle Pecorino, torched cherry tomatoes, arugula</li>
       </ul>
       <p class="station-note">Vegan options available &nbsp;·&nbsp; Additional options upon request</p>
+      <div style="margin-top:18px; border-top:1px solid rgba(166,124,82,0.25); padding-top:14px;">
+        <p style="font-family:'Josefin Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#000; margin-bottom:12px;">Premium Options</p>
+        <ul class="station-list">
+          <li>Jumbo Poached Shrimp, cocktail sauce <span style="font-style:normal; font-weight:700; color:#000;">+$3.00</span></li>
+          <li>Seared Bay Scallop, prosciutto chutney <span style="font-style:normal; font-weight:700; color:#000;">+$4.00</span></li>
+          <li>Shucked Oysters, mignonette, horseradish, lemon, hot sauce <span style="font-style:normal; font-weight:700; color:#000;">+$3.00</span></li>
+          <li>Lobster Tails <span style="font-style:normal; font-weight:700; color:#000;">+$8.50</span></li>
+          <li>Crab Claw, upon availability <span style="font-style:normal; font-weight:700; color:#000;">+$4.50</span></li>
+          <li>Lobster Rolls, matane shrimp, brioche bun <span style="font-style:normal; font-weight:700; color:#000;">+$6.50</span></li>
+        </ul>
+      </div>
     </div>
     <div class="station-block">
       <div class="station-head"><span class="station-name">Oyster Station</span><span class="station-price">$18 / person</span></div>
@@ -419,7 +432,9 @@
         <li>Bruschetta with crostini — onion crema, eggplant caviar</li>
         <li>Marinated olives &amp; giardiniera</li>
       </ul>
-      <p class="station-note">Farm to Table add-on +$10 &nbsp;·&nbsp; Select 3: grilled vegetables · bitter greens salad · kale &amp; Brussels sprout salad · beets &amp; green beans · burrata &amp; heirloom tomatoes (+$5)</p>
+      <p class="station-note">Farm to Table add-on +$10 &nbsp;·&nbsp; Select 3:<br>
+Grilled vegetables &nbsp;·&nbsp; Bitter greens salad &nbsp;·&nbsp; Kale &amp; Brussels sprout salad<br>
+Beets &amp; green beans &nbsp;·&nbsp; Burrata &amp; heirloom tomatoes (+$5)</p>
     </div>
     <div class="station-block">
       <div class="station-head"><span class="station-name">Selection of 3 Italian Cheeses</span><span class="station-price">$18 / person</span></div>
