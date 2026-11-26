@@ -187,6 +187,8 @@
   .lang-bar button:last-child { border-right:none; }
   .lang-bar button.active { color:var(--bronze-pale); }
 
+
+  body.no-allergens .dietary-icons, body.no-allergens .allergen-legend { display:none !important; }
 </style>
 </head>
 <body>
@@ -246,6 +248,7 @@
 <div class="lang-bar">
   <button id="btn-en" class="active" onclick="applyLang('en')">EN</button>
   <button id="btn-fr" onclick="applyLang('fr')">FR</button>
+  <button id="btn-allergens" class="allergen-btn active" type="button" onclick="toggleAllergens()" aria-pressed="true" data-en="Allergens" data-fr="Allergènes">Allergens</button>
 </div>
 
 
@@ -720,15 +723,71 @@ A volume discount can apply when combining a larger selection of stations.</p>
     <div class="sec-rule"></div>
   </div>
 
-  <table class="price-table">
-    <tr><td class="pt-name">Pizza</td><td class="pt-desc">Margherita &middot; Formaggiosa &middot; Giardiniera &middot; Patate e Pancetta &middot; Spicy Pepperoni<br><span style="font-size:13px;font-style:normal;color:var(--muted);"><span data-en="Select 2 for under 60 guests, 3 for 60+. Late-night snack: $9/person" data-fr="Choisissez 2 pour moins de 60 invités, 3 pour 60+. Collation de fin de soirée : 9 $/personne">Select 2 for under 60 guests, 3 for 60+. Late-night snack: $9/person</span></span></td><td class="pt-price">$18</td></tr>
-    <tr><td class="pt-name"><span data-en="Gourmet Grilled Cheese" data-fr="Grilled Cheese Gourmet">Gourmet Grilled Cheese</span></td><td class="pt-desc"><span data-en="Prosciutto chutney &amp;amp; cheddar on brioche &amp;middot; Brie &amp;amp; apple on multigrain &amp;middot; Mont Jacob, fig jam, sourdough" data-fr="Chutney de prosciutto et cheddar sur brioche &amp;middot; Brie et pomme sur multigrain &amp;middot; Mont Jacob, confiture de figues, levain">Prosciutto chutney &amp; cheddar on brioche &middot; Brie &amp; apple on multigrain &middot; Mont Jacob, fig jam, sourdough</span></td><td class="pt-price">$20</td></tr>
-    <tr><td class="pt-name">Tacos</td><td class="pt-desc"><span data-en="Chicken salbutes &amp;middot; Mini beef taco &amp;middot; Vegetarian taco &amp;middot; Mini Baja fish taco" data-fr="Salbutes au poulet &amp;middot; Mini taco au bœuf &amp;middot; Taco végétarien &amp;middot; Mini taco Baja au poisson">Chicken salbutes &middot; Mini beef taco &middot; Vegetarian taco &middot; Mini Baja fish taco</span></td><td class="pt-price">$20</td></tr>
-    <tr><td class="pt-name"><span data-en="Asian Station" data-fr="Station Asiatique">Asian Station</span></td><td class="pt-desc"><span data-en="Salmon poké bowl &amp;middot; Spring rolls with sweet &amp;amp; sour sauce &amp;middot; Assorted sushi &amp;amp; maki &amp;middot; Peking duck pancakes &amp;middot; General Tao chicken &amp;middot; Green papaya salad" data-fr="Poké bowl au saumon &amp;middot; Rouleaux de printemps, sauce aigre-douce &amp;middot; Sushi et makis assortis &amp;middot; Crêpes de canard de Pékin &amp;middot; Poulet General Tao &amp;middot; Salade de papaye verte">Salmon poké bowl &middot; Spring rolls with sweet &amp; sour sauce &middot; Assorted sushi &amp; maki &middot; Peking duck pancakes &middot; General Tao chicken &middot; Green papaya salad</span></td><td class="pt-price">$48</td></tr>
-    <tr><td class="pt-name"><span data-en="Italian Panini &amp;amp; Wrap Bar" data-fr="Bar à Panini et Wraps Italiens">Italian Panini &amp; Wrap Bar</span></td><td class="pt-desc"><span data-en="Caprese &amp;middot; Grilled chicken with smoked provolone &amp;amp; spicy aioli &amp;middot; Grilled vegetable wrap &amp;middot; Eggplant parm" data-fr="Caprese &amp;middot; Poulet grillé, provolone fumé et aïoli épicé &amp;middot; Wrap de légumes grillés &amp;middot; Aubergine parmesane">Caprese &middot; Grilled chicken with smoked provolone &amp; spicy aioli &middot; Grilled vegetable wrap &middot; Eggplant parm</span></td><td class="pt-price">$20</td></tr>
-    <tr><td class="pt-name"><span data-en="Mini Burger Station" data-fr="Station Mini Burgers">Mini Burger Station</span></td><td class="pt-desc"><span data-en="Mini fried chicken burgers &amp;middot; Mini Angus burgers &amp;middot; Vegan Beyond Meat burgers" data-fr="Mini burgers au poulet frit &amp;middot; Mini burgers Angus &amp;middot; Burgers végane Beyond Meat">Mini fried chicken burgers &middot; Mini Angus burgers &middot; Vegan Beyond Meat burgers</span></td><td class="pt-price">$20</td></tr>
-    <tr><td class="pt-name"><span data-en="Build-Your-Own Burger" data-fr="Burger à Composer">Build-Your-Own Burger</span></td><td class="pt-desc"><span data-en="Angus beef, Beyond Meat or fried chicken &amp;middot; Sauces, pickles, cheese, onions, tomatoes, lettuce, coleslaw" data-fr="Bœuf Angus, Beyond Meat ou poulet frit &amp;middot; Sauces, cornichons, fromage, oignons, tomates, laitue, coleslaw">Angus beef, Beyond Meat or fried chicken &middot; Sauces, pickles, cheese, onions, tomatoes, lettuce, coleslaw</span></td><td class="pt-price">$25</td></tr>
-  </table>
+  <div class="subsection">
+    <div class="station-block">
+      <div class="station-head"><span class="station-name">Pizza</span><span class="station-price">$18</span></div>
+      <ul class="station-list">
+        <li>Margherita</li>
+        <li>Formaggiosa</li>
+        <li>Giardiniera</li>
+        <li>Patate e Pancetta</li>
+        <li>Spicy Pepperoni</li>
+      </ul>
+      <p class="station-note" data-en="Select 2 for under 60 guests, 3 for 60+. Late-night snack: $9/person" data-fr="Choisissez 2 pour moins de 60 invités, 3 pour 60+. Collation de fin de soirée : 9 $/personne">Select 2 for under 60 guests, 3 for 60+. Late-night snack: $9/person</p>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name" data-en="Gourmet Grilled Cheese" data-fr="Grilled Cheese Gourmet">Gourmet Grilled Cheese</span><span class="station-price">$20</span></div>
+      <ul class="station-list">
+        <li data-en="Prosciutto chutney &amp;amp; cheddar on brioche" data-fr="Chutney de prosciutto et cheddar sur brioche">Prosciutto chutney &amp; cheddar on brioche</li>
+        <li data-en="Brie &amp;amp; apple on multigrain" data-fr="Brie et pomme sur multigrain">Brie &amp; apple on multigrain</li>
+        <li data-en="Mont Jacob, fig jam, sourdough" data-fr="Mont Jacob, confiture de figues, levain">Mont Jacob, fig jam, sourdough</li>
+      </ul>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name">Tacos</span><span class="station-price">$20</span></div>
+      <ul class="station-list">
+        <li data-en="Chicken salbutes" data-fr="Salbutes au poulet">Chicken salbutes</li>
+        <li data-en="Mini beef taco" data-fr="Mini taco au bœuf">Mini beef taco</li>
+        <li data-en="Vegetarian taco" data-fr="Taco végétarien">Vegetarian taco</li>
+        <li data-en="Mini Baja fish taco" data-fr="Mini taco Baja au poisson">Mini Baja fish taco</li>
+      </ul>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name" data-en="Asian Station" data-fr="Station Asiatique">Asian Station</span><span class="station-price">$48</span></div>
+      <ul class="station-list">
+        <li data-en="Salmon poké bowl" data-fr="Poké bowl au saumon">Salmon poké bowl</li>
+        <li data-en="Spring rolls with sweet &amp;amp; sour sauce" data-fr="Rouleaux de printemps, sauce aigre-douce">Spring rolls with sweet &amp; sour sauce</li>
+        <li data-en="Assorted sushi &amp;amp; maki" data-fr="Sushi et makis assortis">Assorted sushi &amp; maki</li>
+        <li data-en="Peking duck pancakes" data-fr="Crêpes de canard de Pékin">Peking duck pancakes</li>
+        <li data-en="General Tao chicken" data-fr="Poulet General Tao">General Tao chicken</li>
+        <li data-en="Green papaya salad" data-fr="Salade de papaye verte">Green papaya salad</li>
+      </ul>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name" data-en="Italian Panini &amp;amp; Wrap Bar" data-fr="Bar à Panini et Wraps Italiens">Italian Panini &amp; Wrap Bar</span><span class="station-price">$20</span></div>
+      <ul class="station-list">
+        <li data-en="Caprese" data-fr="Caprese">Caprese</li>
+        <li data-en="Grilled chicken with smoked provolone &amp;amp; spicy aioli" data-fr="Poulet grillé, provolone fumé et aïoli épicé">Grilled chicken with smoked provolone &amp; spicy aioli</li>
+        <li data-en="Grilled vegetable wrap" data-fr="Wrap de légumes grillés">Grilled vegetable wrap</li>
+        <li data-en="Eggplant parm" data-fr="Aubergine parmesane">Eggplant parm</li>
+      </ul>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name" data-en="Mini Burger Station" data-fr="Station Mini Burgers">Mini Burger Station</span><span class="station-price">$20</span></div>
+      <ul class="station-list">
+        <li data-en="Mini fried chicken burgers" data-fr="Mini burgers au poulet frit">Mini fried chicken burgers</li>
+        <li data-en="Mini Angus burgers" data-fr="Mini burgers Angus">Mini Angus burgers</li>
+        <li data-en="Vegan Beyond Meat burgers" data-fr="Burgers végane Beyond Meat">Vegan Beyond Meat burgers</li>
+      </ul>
+    </div>
+    <div class="station-block">
+      <div class="station-head"><span class="station-name" data-en="Build-Your-Own Burger" data-fr="Burger à Composer">Build-Your-Own Burger</span><span class="station-price">$25</span></div>
+      <ul class="station-list">
+        <li data-en="Angus beef, Beyond Meat or fried chicken" data-fr="Bœuf Angus, Beyond Meat ou poulet frit">Angus beef, Beyond Meat or fried chicken</li>
+        <li data-en="Sauces, pickles, cheese, onions, tomatoes, lettuce, coleslaw" data-fr="Sauces, cornichons, fromage, oignons, tomates, laitue, coleslaw">Sauces, pickles, cheese, onions, tomatoes, lettuce, coleslaw</li>
+      </ul>
+    </div>
+  </div>
 
   <div class="subsection" style="margin-top:48px;">
     <div class="sub-label" data-en="Late-Night Snacks — Priced per item" data-fr="Collations de Fin de Soirée — Prix à l'unité">Late-Night Snacks — Priced per item</div>
@@ -802,7 +861,7 @@ A volume discount can apply when combining a larger selection of stations.</p>
       <div class="course-body">
         <span data-en="Truffle salad, radicchio, endive frisée, Pecorino, truffle vinaigrette" data-fr="Salade à la truffe, radicchio, endive frisée, pecorino, vinaigrette à la truffe">Truffle salad, radicchio, endive frisée, Pecorino, truffle vinaigrette</span>
         <span class="course-or" data-en="or" data-fr="ou">or</span>
-        <span data-en="Legumi: ricotta &amp;amp; spinach cappelletti, confit cherry tomatoes, aglio e olio" data-fr="Legumi : cappelletti ricotta et épinards, tomates cerises confites, aglio e olio">Legumi: ricotta &amp; spinach cappelletti, confit cherry tomatoes, aglio e olio</span>
+        <span data-en="Cappellacci: ricotta &amp;amp; spinach cappelletti, confit cherry tomatoes, aglio e olio" data-fr="Cappellacci : cappelletti ricotta et épinards, tomates cerises confites, aglio e olio">Cappellacci: ricotta &amp; spinach cappelletti, confit cherry tomatoes, aglio e olio</span>
       </div>
     </div>
     <div class="sitdown-course">
@@ -952,6 +1011,19 @@ function applyLang(lang){
   var saved = null;
   try { saved = localStorage.getItem('beatrice-lang'); } catch(e) {}
   if (saved === 'fr') applyLang('fr');
+})();
+
+function toggleAllergens(force){
+  var show = (typeof force === 'boolean') ? force : document.body.classList.contains('no-allergens');
+  document.body.classList.toggle('no-allergens', !show);
+  var b = document.getElementById('btn-allergens');
+  if (b) { b.classList.toggle('active', show); b.setAttribute('aria-pressed', show ? 'true' : 'false'); }
+  try { localStorage.setItem('beatrice-allergens', show ? '1' : '0'); } catch(e) {}
+}
+(function(){
+  var s = null;
+  try { s = localStorage.getItem('beatrice-allergens'); } catch(e) {}
+  if (s === '0') toggleAllergens(false);
 })();
 </script>
 
