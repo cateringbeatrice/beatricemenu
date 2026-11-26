@@ -196,6 +196,9 @@
   body.no-allergens .allergen-toggle .lbl-show { display:inline; }
   body.no-allergens .allergen-toggle-wrap { margin-bottom:48px; }
   body.no-allergens .dietary-icons, body.no-allergens .allergen-legend { display:none !important; }
+  .tier-table td.tier-std, .tier-table td.tier-prem { font-size:16px; font-weight:700; color:#000000; text-align:right; white-space:nowrap; width:20%; }
+  .tier-table tr.tier-head td { font-family:'Josefin Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--bronze); padding:0 0 10px; }
+  .tier-table tr.tier-head { border-bottom:1px solid rgba(166,124,82,0.28); }
 </style>
 </head>
 <body>
@@ -982,13 +985,12 @@ A volume discount can apply when combining a larger selection of stations.</p>
   <div class="subsection">
     <div class="sub-label" data-en="Open Bar — Tiered Packages" data-fr="Bar Ouvert — Formules par Durée">Open Bar — Tiered Packages</div>
     <p class="station-note" style="margin-bottom:24px;" data-en="Includes wine, beer, standard bar, non-alcoholic drinks &amp;amp; 1 signature cocktail. Priced per guest." data-fr="Inclut vin, bière, bar standard, consommations sans alcool et 1 cocktail signature. Prix par invité.">Includes wine, beer, standard bar, non-alcoholic drinks &amp; 1 signature cocktail. Priced per guest.</p>
-    <table class="price-table">
-      <tr><td class="pt-name" data-en="0–2 Hours" data-fr="0 à 2 heures">0–2 Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="$32 / guest" data-fr="32 $ / invité">$32 / guest</td></tr>
-      <tr><td class="pt-name" data-en="2–3 Hours" data-fr="2 à 3 heures">2–3 Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="$40 / guest" data-fr="40 $ / invité">$40 / guest</td></tr>
-      <tr><td class="pt-name" data-en="3–4 Hours" data-fr="3 à 4 heures">3–4 Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="$50 / guest" data-fr="50 $ / invité">$50 / guest</td></tr>
-      <tr><td class="pt-name" data-en="4–5 Hours" data-fr="4 à 5 heures">4–5 Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="$60 / guest" data-fr="60 $ / invité">$60 / guest</td></tr>
-      <tr><td class="pt-name" data-en="5–7 Hours" data-fr="5 à 7 heures">5–7 Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="$70 / guest" data-fr="70 $ / invité">$70 / guest</td></tr>
-      <tr><td class="pt-name" data-en="7+ Hours" data-fr="7 heures et plus">7+ Hours</td><td class="pt-desc"></td><td class="pt-price" data-en="Please ask us" data-fr="Veuillez nous contacter">Please ask us</td></tr>
+    <table class="price-table tier-table">
+      <tr class="tier-head"><td></td><td class="tier-std" data-en="Standard" data-fr="Standard">Standard</td><td class="tier-prem" data-en="Premium" data-fr="Premium">Premium</td></tr>
+      <tr><td class="pt-name" data-en="0–3 Hours" data-fr="0 à 3 heures">0–3 Hours</td><td class="tier-std" data-en="$50" data-fr="50 $">$50</td><td class="tier-prem" data-en="$60" data-fr="60 $">$60</td></tr>
+      <tr><td class="pt-name" data-en="3–5 Hours" data-fr="3 à 5 heures">3–5 Hours</td><td class="tier-std" data-en="$60" data-fr="60 $">$60</td><td class="tier-prem" data-en="$70" data-fr="70 $">$70</td></tr>
+      <tr><td class="pt-name" data-en="5–7 Hours" data-fr="5 à 7 heures">5–7 Hours</td><td class="tier-std" data-en="$70" data-fr="70 $">$70</td><td class="tier-prem" data-en="$80" data-fr="80 $">$80</td></tr>
+      <tr><td class="pt-name" data-en="7+ Hours" data-fr="7 heures et plus">7+ Hours</td><td class="tier-prem" colspan="2" data-en="Please ask us" data-fr="Veuillez nous contacter">Please ask us</td></tr>
     </table>
     <p class="asterisk-note" data-en="For events longer than 7 hours, please contact us for a custom quote." data-fr="Pour les événements de plus de 7 heures, veuillez nous contacter pour une soumission personnalisée.">For events longer than 7 hours, please contact us for a custom quote.</p>
   </div>
